@@ -1,21 +1,19 @@
 // eslint.config.js
-module.exports = {
-  languageOptions: {
-    globals: {
-      // List of global variables that your code might use
-      node: true,
-      es2021: true,
+import eslintRecommended from 'eslint:recommended';
+import pluginNodeRecommended from 'plugin:node/recommended';
+
+export default [
+  {
+    languageOptions: {
+      globals: {
+        node: true,
+        es2021: true,
+      },
+    },
+    rules: {
+      // Add your custom rules here
     },
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:node/recommended',
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
-    // Customize your ESLint rules here
-  },
-};
+  eslintRecommended,  // Directly include the ESLint recommended config
+  pluginNodeRecommended,  // Directly include the plugin:node recommended config
+];
