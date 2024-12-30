@@ -20,7 +20,8 @@ pipeline {
             steps {
                 script {
                     dir('backend') {
-                        bat 'npm install'  
+                        bat 'npm install' 
+                        bat 'npm install -g eslint'
                     }
                 }
             }
@@ -35,7 +36,7 @@ pipeline {
                 }
             }
         }
- 
+    
         stage('Build') {
             steps {
                 // Build the React app
@@ -63,7 +64,7 @@ pipeline {
             }
         }
     }
- 
+
     post {
         success {
             echo 'Pipeline completed successfully'
