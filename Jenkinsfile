@@ -18,11 +18,11 @@ pipeline {
  
         stage('Install Dependencies') {
             steps {
-                // Set the PATH and install dependencies using npm
-                bat '''
-                set PATH=%NODEJS_HOME%;%PATH%
-                npm install
-                '''
+                script {
+                    dir('backend') {
+                        bat 'npm install'  
+                    }
+                }
             }
         }
  
