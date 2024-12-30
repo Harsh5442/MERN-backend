@@ -28,11 +28,11 @@ pipeline {
  
         stage('Lint') {
             steps {
-                // Run linting to ensure code quality
-                bat '''
-                set PATH=%NODEJS_HOME%;%PATH%
-                npm run lint
-                '''
+                script{
+                    dir('backend') {
+                        bat 'npm run lint'  
+                    }
+                }
             }
         }
  
