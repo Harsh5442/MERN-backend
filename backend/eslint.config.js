@@ -1,8 +1,11 @@
 // eslint.config.js
 module.exports = {
-  env: {
-    node: true,
-    es2021: true,
+  languageOptions: {
+    globals: {
+      // List of global variables that your code might use
+      node: true,
+      es2021: true,
+    },
   },
   extends: [
     'eslint:recommended',
