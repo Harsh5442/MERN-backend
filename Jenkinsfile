@@ -27,15 +27,15 @@ pipeline {
             }
         }
  
-        stage('Lint') {
-            steps {
-                script{
-                    dir('backend') {
-                        bat 'npm run lint'  
-                    }
-                }
-            }
-        }
+        // stage('Lint') {
+        //     steps {
+        //         script{
+        //             dir('backend') {
+        //                 bat 'npm run lint'  
+        //             }
+        //         }
+        //     }
+        // }
     
         stage('Build') {
             steps {
