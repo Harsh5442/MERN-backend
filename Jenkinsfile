@@ -27,27 +27,27 @@ pipeline {
             }
         }
  
-        // stage('Lint') {
-        //     steps {
-        //         script{
-        //             dir('backend') {
-        //                 bat 'npm run lint'  
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Lint') {
+            steps {
+                script{
+                    dir('backend') {
+                        bat 'npm run lint'  
+                    }
+                }
+            }
+        }
     
-        // stage('Build') {
-        //     steps {
-        //         dir('backend'){
-        //         // Build the React app
-        //         bat '''
-        //         set PATH=%NODEJS_HOME%;%PATH%
-        //         npm run build
-        //         '''
-        //         }
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                dir('backend'){
+                // Build the React app
+                bat '''
+                set PATH=%NODEJS_HOME%;%PATH%
+                npm run build
+                '''
+                }
+            }
+        }
  
         stage('SonarQube Analysis') {
             environment {
